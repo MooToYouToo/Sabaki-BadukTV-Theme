@@ -1,0 +1,99 @@
+/* This stylesheet is loaded when Sabaki starts up. */
+
+/*Blur to simulate TV broadcast*/
+main {
+	background-image: url('background.png');
+	filter: blur(0.05rem);
+}
+
+/*Box shadow with multiple directions to emulate studio lights*/
+#goban {
+    box-shadow: 0.35em 0.06em 0.8em rgb(17, 7, 2, 0.8), -0.35em -0.6em 0.8em rgba(17, 7, 2, 0.8);
+}
+
+.shudan-goban-image {
+  /* Board texture */
+  background-image: url('board.jpg');
+  /* filter: blur(0.03rem); */
+}
+
+.shudan-stone-image.shudan-sign_1 {
+  background-image: url('black_00.png');
+}
+.shudan-stone-image.shudan-sign_1.shudan-random_1 {
+  background-image: url('black_01.png');
+}
+.shudan-stone-image.shudan-sign_1.shudan-random_2 {
+  background-image: url('black_02.png');
+}
+.shudan-stone-image.shudan-sign_1.shudan-random_3 {
+  background-image: url('black_03.png');
+}
+
+.shudan-stone-image.shudan-sign_-1 {
+  background-image: url('white_00.png');
+}
+.shudan-stone-image.shudan-sign_-1.shudan-random_1 {
+  background-image: url('white_01.png');
+}
+.shudan-stone-image.shudan-sign_-1.shudan-random_2 {
+  background-image: url('white_02.png');
+}
+.shudan-stone-image.shudan-sign_-1.shudan-random_3 {
+  background-image: url('white_03.png');
+}
+.shudan-stone-image.shudan-sign_-1.shudan-random_4 {
+  background-image: url('white_04.png');
+}
+.shudan-stone-image.shudan-sign_-1.shudan-random_5 {
+  background-image: url('white_05.png');
+}
+.shudan-stone-image.shudan-sign_-1.shudan-random_6 {
+  background-image: url('white_06.png');
+}
+.shudan-stone-image.shudan-sign_-1.shudan-random_7 {
+  background-image: url('white_07.png');
+}
+.shudan-stone-image.shudan-sign_-1.shudan-random_8 {
+  background-image: url('white_08.png');
+}
+.shudan-stone-image.shudan-sign_-1.shudan-random_9 {
+  background-image: url('white_09.png');
+}
+.shudan-stone-image.shudan-sign_-1.shudan-random_10 {
+  background-image: url('white_10.png');
+}
+
+.shudan-goban {
+  --shudan-board-border-width: none;
+  --shudan-board-border-color: #ca933a;
+
+  --shudan-board-background-color: #C5B070;
+  --shudan-board-foreground-color: #2C1200;
+
+  --shudan-black-background-color: #222;
+  --shudan-black-foreground-color: rgb(212, 1, 1);
+
+  --shudan-white-background-color: #fff;
+  --shudan-white-foreground-color: rgb(212, 1, 1);
+}
+
+/*Stones have multiple box shadows in the directions of their light spots*/
+.shudan-vertex:not(.shudan-sign_0) .shudan-shadow {
+    background: rgba(23, 10, 2, 1);
+    box-shadow: 0.07em 0.12em 0.13em rgb(17, 7, 2, 0.35), -0.07em -0.12em 0.13em rgba(17, 7, 2, 0.35);
+}
+
+/*Markers needed to be more blurrier*/
+.shudan-marker {
+	filter: blur(0.05rem);
+}
+
+/*Make markers on stones red*/
+.shudan-vertex.shudan-marker_triangle.shudan-sign_1 .shudan-marker::after, .shudan-vertex.shudan-marker_triangle.shudan-sign_-1 .shudan-marker::after {
+    border-bottom-color: var(--shudan-black-foreground-color);
+}
+
+.shudan-vertex.shudan-marker_triangle.shudan-sign_0 .shudan-marker::after {
+	border-bottom-color: var(--shudan-board-foreground-color);
+}
